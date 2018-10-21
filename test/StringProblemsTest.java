@@ -30,4 +30,15 @@ public class StringProblemsTest {
     public void empty_string_should_return_empty_string() {
         assertThat("Empty input should return empty string", StringProblems.order(""), equalTo(""));
     }
+
+    @Test
+    public void should_return_encrypted_string() {
+        assertEquals("This is a test!", StringProblems.encrypt("This is a test!", 0));
+        assertEquals("hsi  etTi sats!", StringProblems.encrypt("This is a test!", 1));
+        assertEquals("s eT ashi tist!", StringProblems.encrypt("This is a test!", 2));
+        assertEquals(" Tah itse sits!", StringProblems.encrypt("This is a test!", 3));
+        assertEquals("This is a test!", StringProblems.encrypt("This is a test!", 4));
+        assertEquals("This is a test!", StringProblems.encrypt("This is a test!", -1));
+        assertEquals("hskt svr neetn!Ti aai eyitrsig", StringProblems.encrypt("This kata is very interesting!", 1));
+    }
 }
